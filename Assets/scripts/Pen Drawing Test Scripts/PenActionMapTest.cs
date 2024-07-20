@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class OnPenTouchDo : MonoBehaviour
+public class PenActionMapTest : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     public InputActionAsset inputActionAsset;
 
@@ -21,19 +20,10 @@ public class OnPenTouchDo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //pen update wrapper???
-        //how do I get the action and look for when the PenTap action is called?
-        // if (Pen.current == null)
-        // {
-        //     return;
-        // }
-        
         if (Pen.current.IsPressed())
         {
             Debug.Log("I have the pressed!");
         }
-
-        
     }
 
     private void OnEnable()
