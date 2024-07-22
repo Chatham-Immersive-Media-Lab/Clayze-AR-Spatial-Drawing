@@ -26,7 +26,7 @@ public class PenInteractor : MonoBehaviour
         TipPressedAction();
     }
 
-    void TipPressedAction()
+    private void TipPressedAction()
     {
         cursorTemp.transform.position = _camera.ScreenToViewportPoint(Pen.current.position.ReadValue());
         if (Pen.current.tip.IsPressed())
