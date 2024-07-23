@@ -32,13 +32,18 @@ public class DrawBehavior : MonoBehaviour
         if (Pen.current.tip.wasPressedThisFrame)
         {
             SelectedObject = Instantiate(LineRendererObject, ParentalTransformObject);
-            
+            _lineRenderer = SelectedObject.GetComponent<LineRenderer>();
         }
 
         if (Pen.current.tip.IsPressed())
         {
             _lineRenderer.positionCount++;
             _lineRenderer.SetPosition(_lineRenderer.positionCount ,penTransform.position);
+        }
+
+        if (Pen.current.tip.wasReleasedThisFrame)
+        {
+            
         }
     }
 }

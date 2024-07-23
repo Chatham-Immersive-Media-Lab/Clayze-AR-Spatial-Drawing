@@ -28,7 +28,7 @@ public class PenInteractor : MonoBehaviour
             //     new Vector2(Mathf.Clamp(Pen.current.position.value.normalized.x, 0f, _camera.pixelWidth),
             //         Mathf.Clamp(Pen.current.position.value.normalized.y, 0f, _camera.pixelHeight));
             
-            Debug.Log("pressed");
+          //  Debug.Log("pressed");
             
         }
     }
