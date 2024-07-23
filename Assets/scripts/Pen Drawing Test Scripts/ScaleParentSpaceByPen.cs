@@ -48,9 +48,6 @@ public class ScaleParentSpaceByPen : MonoBehaviour
 
     public void TranslatePenCanvas()
     {
-        
-        
-        
         float XPenVal = transform.position.x;
         float YPenVal = transform.position.y;
 
@@ -67,7 +64,6 @@ public class ScaleParentSpaceByPen : MonoBehaviour
         {
             //I need to drag the position of the other object relative to the other. I need to get the vector 3
             //offset between the center of each object, offest that then att the difference in change.
-            
             parentScaleObject.transform.position = penToCanvasVector3 - canvasOffsetPosition ;
         }
 
