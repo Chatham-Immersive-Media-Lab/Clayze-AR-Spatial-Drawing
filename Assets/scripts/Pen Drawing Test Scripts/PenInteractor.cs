@@ -11,15 +11,8 @@ public class PenInteractor : MonoBehaviour
     /// </summary>
 
     [SerializeField] private Camera _camera;
-    
-    [SerializeField] private LineRenderer _lineRenderer;
 
     [SerializeField] private GameObject cursorTemp;
-
-    private void Awake()
-    {
-        _lineRenderer = GetComponent<LineRenderer>();
-    }
 
     private void Update()
     {
