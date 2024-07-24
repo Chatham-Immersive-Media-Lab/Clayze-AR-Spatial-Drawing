@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PenInteractor : MonoBehaviour
+public class PenPosition : MonoBehaviour
 {
     /// <summary>
     /// This controls a line renederes position data in space by using a pen tablets display.
@@ -21,22 +21,13 @@ public class PenInteractor : MonoBehaviour
 
     private void TipPressedAction()
     {
-        cursorTemp.transform.position = _camera.ScreenToViewportPoint(Pen.current.position.ReadValue());
+        Vector3 screenPoint = new Vector3(Pen.current.position.x.value, Pen.current.position.y.value, 10);
+        cursorTemp.transform.position = _camera.ScreenToWorldPoint(screenPoint);
+       
         if (Pen.current.tip.IsPressed())
         {
-            // Vector2 tempScreenSpacePenVector2 =
-            //     new Vector2(Mathf.Clamp(Pen.current.position.value.normalized.x, 0f, _camera.pixelWidth),
-            //         Mathf.Clamp(Pen.current.position.value.normalized.y, 0f, _camera.pixelHeight));
-            
-          //  Debug.Log("pressed");
-            
+            return;
         }
-    }
-    
-    
-
-    private void LineRenderAdd()
-    {
         
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ScaleParentSpaceByPen : MonoBehaviour
+public class PenTranslateOther : MonoBehaviour
 {
     [SerializeField] private GameObject parentScaleObject;
     private Vector3 scaleValueVector3;
@@ -53,6 +53,10 @@ public class ScaleParentSpaceByPen : MonoBehaviour
 
         Vector3 penToCanvasVector3  = new Vector3(XPenVal, 0, YPenVal);
         Vector3 offestVector3 = penToCanvasVector3 - parentScaleObject.transform.position;
+
+        Vector3 trainformSwitched = new Vector3(transform.position.x, 0, transform.position.y);
+        Vector3 penStartSwitched = new Vector3(penStartPosition.x, 0, penStartPosition.y);
+        
         if (Pen.current.tip.wasPressedThisFrame)
         {
             penStartPosition = transform.position;
@@ -69,7 +73,7 @@ public class ScaleParentSpaceByPen : MonoBehaviour
 
         if (Pen.current.tip.wasReleasedThisFrame)
         {
-            totalPenTravel += transform.position  - penStartPosition;
+            totalPenTravel += trainformSwitched  - penStartSwitched;
             
             canvasOffsetPosition = totalPenTravel;
             Debug.Log("released");

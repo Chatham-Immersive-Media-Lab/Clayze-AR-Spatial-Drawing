@@ -50,6 +50,11 @@ public class PenInput3D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //HunterPenBehavior();
+    }
+
+    public void HunterPenBehavior()
+    {
         _lastAddTime += Time.deltaTime;
         if (Pen.current == null)
         {

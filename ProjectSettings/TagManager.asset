@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TranslateOrbUI
   - ScaleOrbUI
+  - RotateOrbUI
   layers:
   - Default
   - TransparentFX

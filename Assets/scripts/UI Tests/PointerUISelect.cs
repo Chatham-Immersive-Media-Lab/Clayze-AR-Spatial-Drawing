@@ -14,11 +14,19 @@ public class PointerUISelect : MonoBehaviour
         if (other.CompareTag("ScaleOrbUI"))
         {
             Debug.Log("scaleOrb Selected");
+            //change state
             _localUiPen.RadialDisable();
         }
         else if (other.CompareTag("TranslateOrbUI"))
         {
             Debug.Log("translateOrb Selected");
+            //change state
+            _localUiPen.RadialDisable();
+        }
+        else if (other.CompareTag("RotateOrbUI"))
+        {
+            Debug.Log("rotateOrb Selected");
+            //Change State
             _localUiPen.RadialDisable();
         }
         

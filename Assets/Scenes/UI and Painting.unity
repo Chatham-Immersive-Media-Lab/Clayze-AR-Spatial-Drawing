@@ -163,6 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 715322378}
   - component: {fileID: 715322377}
+  - component: {fileID: 715322379}
   m_Layer: 0
   m_Name: Pen Temp
   m_TagString: Untagged
@@ -201,6 +202,22 @@ Transform:
   - {fileID: 2021776323}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &715322379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715322376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b245e54d9f05c645bca449cdc18c520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentScaleObject: {fileID: 0}
+  totalPenTravel: {x: 0, y: 0, z: 0}
+  stateInt: 0
+  _penInput3D: {fileID: 1270020900}
 --- !u!1 &1000771688
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1149820892}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: InkParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,7 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1581554326}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Drawing Object Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
