@@ -2,36 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PenStatehandler : MonoBehaviour
 {
-    [SerializeField] private GameObject parentScaleObject;
-    private Vector3 scaleValueVector3;
+    /// <summary>
+    /// This is a amalgamation of all other movement scripts into a attempted working prototype.
+    /// Taking public functions from 3 separate scripts, it only references others as a singleton behavior.
+    /// </summary>
+    
+    [SerializeField] private GameObject DrawnObjectParent;
+    [SerializeField] private List<GameObject> drawnObjectList = new List<GameObject>();
+    [Space]
     private Vector3 canvasOffsetPosition;
-
     private Vector3 penStartPosition;
     [SerializeField] private Vector3 totalPenTravel;
     [Space]
     public int stateInt = 0;
-
-    [Space] [SerializeField] private PenInput3D _penInput3D;
+    [Space] 
+    [SerializeField] private PenInput3D _penInput3D;
+    public GameObject drawingObjectParent;
     void Start()
     {
-        GetParentScale();
         canvasOffsetPosition = new Vector3(0, 0, 0);
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         ChosenPenState();
-    }
 
-    private void GetParentScale()
-    {
-        scaleValueVector3 = parentScaleObject.transform.localScale;
-        
+        if (Pen.current.tip.wasReleasedThisFrame)
+        {
+            GetChildObjects();
+            Debug.Log("CheckedList");
+        }
     }
+    
 
     public void SetParentScale()
     {
@@ -50,6 +59,14 @@ public class PenStatehandler : MonoBehaviour
         //Pen.current.position.value
     }
 
+    private void GetChildObjects()
+    {
+        drawnObjectList.Clear();
+        foreach (Transform childObject in drawingObjectParent.GetComponentsInChildren<Transform>())
+        {
+            drawnObjectList.Add(childObject.gameObject);
+        }
+    }
     public void ChosenPenState()
     {
         //each behavior needs to get the current newly instantiated object in the scene... how can I do that.
@@ -59,11 +76,21 @@ public class PenStatehandler : MonoBehaviour
         }
         else if (stateInt == 1)
         {
-            
+            RotationState();
+        }
+        else if (stateInt == 2)
+        {
+            TranslateState();
+        }
+        else if (stateInt == 3)
+        {
+            ScaleState();
         }
     }
     
-    private void OnPenBarrel()
+    
+    
+    private void RotationState()
     {
         if (Pen.current.tip.IsPressed())
         {
@@ -71,19 +98,19 @@ public class PenStatehandler : MonoBehaviour
             float penTiltX = Pen.current.tilt.value.x;
             Vector3 normal = Vector3.up;
             Vector3 tiltDir = new Vector3(penTiltX, 0, -penTiltY);
-            parentScaleObject.transform.rotation = Quaternion.AngleAxis(Mathf.Max( Mathf.Abs(penTiltX),Mathf.Abs(penTiltY))  * 90, 
+            DrawnObjectParent.transform.rotation = Quaternion.AngleAxis(Mathf.Max( Mathf.Abs(penTiltX),Mathf.Abs(penTiltY))  * 90, 
                 Vector3.Cross( normal,tiltDir).normalized);
             Debug.Log("we are rotating?");
         }
     }
 
-    public void TranslatePenCanvas()
+    public void TranslateState()
     {
         float XPenVal = transform.position.x;
         float YPenVal = transform.position.y;
 
         Vector3 penToCanvasVector3  = new Vector3(XPenVal, 0, YPenVal);
-        Vector3 offestVector3 = penToCanvasVector3 - parentScaleObject.transform.position;
+        Vector3 offestVector3 = penToCanvasVector3 - DrawnObjectParent.transform.position;
 
         Vector3 trainformSwitched = new Vector3(transform.position.x, 0, transform.position.y);
         Vector3 penStartSwitched = new Vector3(penStartPosition.x, 0, penStartPosition.y);
@@ -99,7 +126,7 @@ public class PenStatehandler : MonoBehaviour
         {
             //I need to drag the position of the other object relative to the other. I need to get the vector 3
             //offset between the center of each object, offest that then att the difference in change.
-            parentScaleObject.transform.position = penToCanvasVector3 - canvasOffsetPosition ;
+            DrawnObjectParent.transform.position = penToCanvasVector3 - canvasOffsetPosition ;
         }
 
         if (Pen.current.tip.wasReleasedThisFrame)
@@ -109,5 +136,10 @@ public class PenStatehandler : MonoBehaviour
             canvasOffsetPosition = totalPenTravel;
             Debug.Log("released");
         }
+    }
+
+    private void ScaleState()
+    {
+        
     }
 }

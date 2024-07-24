@@ -16,15 +16,13 @@ public class LocalUiPen : MonoBehaviour
     [SerializeField] private GameObject cursorTemp;
     [SerializeField] private Transform UITransform;
     [SerializeField] private GameObject ParentUIChildObject;
-
-    [SerializeField] private PenRotateOther _penRotate;
-    [FormerlySerializedAs("_penScale")] [SerializeField] private PenTranslateOther penTranslateOtherScale;
-    //[SerializeField] private 
+    [Space]
+    [SerializeField] private PenStatehandler _PenStatehandler;
     private void Update()
     {
         UiPressAction();
     }
-
+    
     private void UiPressAction()
     {
         

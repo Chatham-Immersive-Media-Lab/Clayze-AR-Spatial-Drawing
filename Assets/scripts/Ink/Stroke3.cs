@@ -55,7 +55,7 @@ namespace Clayze.Ink
 
 				if (d > 0)
 				{
-					Debug.Log(d);
+					//Debug.Log(d);
 				}
 
 				Points.Add(new InkPoint3(point3.x,point3.y,point3.z,point3.Width,d));//does this work on real data or iterator variable?
