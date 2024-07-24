@@ -31,11 +31,12 @@ public class PointerUISelect : MonoBehaviour
             _penStatehandler.stateInt = 1;
             _localUiPen.RadialDisable();
         }
-        else if (Pen.current.tip.wasPressedThisFrame)
+        else if (other.CompareTag("DrawOrbUI"))
         {
             //what a nightmare of a choice here! this goes against the whole deal here...
             //there is no UI showing this, god heck!
             _penStatehandler.stateInt = 0;
+            _localUiPen.RadialDisable();
         }
     }
 }

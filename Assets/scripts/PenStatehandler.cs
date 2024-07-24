@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -13,6 +14,7 @@ public class PenStatehandler : MonoBehaviour
     
     [SerializeField] private GameObject DrawnObjectParent;
     [SerializeField] private List<GameObject> drawnObjectList = new List<GameObject>();
+    private GameObject _lastDrawnObject;
     [Space]
     private Vector3 canvasOffsetPosition;
     private Vector3 penStartPosition;
@@ -66,6 +68,8 @@ public class PenStatehandler : MonoBehaviour
         {
             drawnObjectList.Add(childObject.gameObject);
         }
+
+        _lastDrawnObject = drawnObjectList.Last();
     }
     public void ChosenPenState()
     {
@@ -88,8 +92,6 @@ public class PenStatehandler : MonoBehaviour
         }
     }
     
-    
-    
     private void RotationState()
     {
         if (Pen.current.tip.IsPressed())
@@ -98,7 +100,7 @@ public class PenStatehandler : MonoBehaviour
             float penTiltX = Pen.current.tilt.value.x;
             Vector3 normal = Vector3.up;
             Vector3 tiltDir = new Vector3(penTiltX, 0, -penTiltY);
-            DrawnObjectParent.transform.rotation = Quaternion.AngleAxis(Mathf.Max( Mathf.Abs(penTiltX),Mathf.Abs(penTiltY))  * 90, 
+            _lastDrawnObject.transform.rotation = Quaternion.AngleAxis(Mathf.Max( Mathf.Abs(penTiltX),Mathf.Abs(penTiltY))  * 90, 
                 Vector3.Cross( normal,tiltDir).normalized);
             Debug.Log("we are rotating?");
         }

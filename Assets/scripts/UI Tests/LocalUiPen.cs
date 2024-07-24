@@ -26,9 +26,9 @@ public class LocalUiPen : MonoBehaviour
     private void UiPressAction()
     {
         
-        Vector3 offsetposition = new Vector3(Pen.current.position.ReadValue().x, Pen.current.position.ReadValue().y,
-            UITransform.position.z);
-        cursorTemp.transform.position = _camera.ScreenToViewportPoint(offsetposition);
+        Vector3 offsetposition = new Vector3(Pen.current.position.x.value, Pen.current.position.y.value,
+            3);
+        cursorTemp.transform.position = _camera.ScreenToWorldPoint(offsetposition);
 
         if (!Pen.current.firstBarrelButton.wasPressedThisFrame)
         {
