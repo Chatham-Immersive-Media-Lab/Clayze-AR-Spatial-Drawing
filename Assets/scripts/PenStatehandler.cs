@@ -24,6 +24,10 @@ public class PenStatehandler : MonoBehaviour
     [Space] 
     [SerializeField] private PenInput3D _penInput3D;
     public GameObject drawingObjectParent;
+    
+    //[SerializeField] private LineRenderer lineRenderer;
+    private Vector2 startPosition;
+    private Vector3 ChangedDistnacePostion;
     void Start()
     {
         canvasOffsetPosition = new Vector3(0, 0, 0);
@@ -43,7 +47,6 @@ public class PenStatehandler : MonoBehaviour
         }
     }
     
-
     public void SetParentScale()
     {
         // I would like to change the value of an object based on the abs value in dinstance from one point
@@ -84,7 +87,7 @@ public class PenStatehandler : MonoBehaviour
         }
         else if (stateInt == 2)
         {
-            TranslateState();
+            TranslateLineRender();
         }
         else if (stateInt == 3)
         {
@@ -106,37 +109,36 @@ public class PenStatehandler : MonoBehaviour
         }
     }
 
-    public void TranslateState()
+    private void TranslateLineRender()
     {
-        float XPenVal = transform.position.x;
-        float YPenVal = transform.position.y;
-
-        Vector3 penToCanvasVector3  = new Vector3(XPenVal, 0, YPenVal);
-        Vector3 offestVector3 = penToCanvasVector3 - DrawnObjectParent.transform.position;
-
-        Vector3 trainformSwitched = new Vector3(transform.position.x, 0, transform.position.y);
-        Vector3 penStartSwitched = new Vector3(penStartPosition.x, 0, penStartPosition.y);
-        
-        if (Pen.current.tip.wasPressedThisFrame)
-        {
-            penStartPosition = transform.position;
-            Debug.Log("pressed, and set");
-            Debug.Log(penStartPosition);
-        }
-        
         if (Pen.current.tip.IsPressed())
         {
-            //I need to drag the position of the other object relative to the other. I need to get the vector 3
-            //offset between the center of each object, offest that then att the difference in change.
-            DrawnObjectParent.transform.position = penToCanvasVector3 - canvasOffsetPosition ;
+            DistanceAdd();
+            AdditionToLinePoints();
         }
+    }
 
-        if (Pen.current.tip.wasReleasedThisFrame)
+    private void AdditionToLinePoints()
+    {
+        LineRenderer drawnObjectLine = _lastDrawnObject.GetComponent<LineRenderer>();
+        for (int i = 0; i < drawnObjectLine.positionCount; i++)
         {
-            totalPenTravel += trainformSwitched  - penStartSwitched;
-            
-            canvasOffsetPosition = totalPenTravel;
-            Debug.Log("released");
+            drawnObjectLine.SetPosition(i, drawnObjectLine.GetPosition(i) - ChangedDistnacePostion / 150);
+        }
+    }
+
+    private void DistanceAdd()
+    {
+        if (Pen.current.tip.wasPressedThisFrame)
+        {
+            startPosition = new Vector2(Pen.current.position.x.value, Pen.current.position.y.value);
+        }
+        else if (Pen.current.tip.IsPressed())
+        {
+            float a = startPosition.x - Pen.current.position.x.value;
+            float b = startPosition.y - Pen.current.position.y.value;
+
+            ChangedDistnacePostion = new Vector3(a, 0, b);
         }
     }
 

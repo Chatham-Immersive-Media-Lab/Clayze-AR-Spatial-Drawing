@@ -50,6 +50,9 @@ public class PenTranslateOther : MonoBehaviour
     {
         float XPenVal = transform.position.x;
         float YPenVal = transform.position.y;
+        
+        // I need to get the distance formula for the z axis and the x axis. The z axis will be replaced
+        // By the pens value of y/
 
         Vector3 penToCanvasVector3  = new Vector3(XPenVal, 0, YPenVal);
         Vector3 offestVector3 = penToCanvasVector3 - parentScaleObject.transform.position;
@@ -73,7 +76,7 @@ public class PenTranslateOther : MonoBehaviour
 
         if (Pen.current.tip.wasReleasedThisFrame)
         {
-            totalPenTravel += trainformSwitched  - penStartSwitched;
+            totalPenTravel -= trainformSwitched + penStartSwitched;
             
             canvasOffsetPosition = totalPenTravel;
             Debug.Log("released");
