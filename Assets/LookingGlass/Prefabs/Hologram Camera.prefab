@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4572898447849137938}
   - component: {fileID: 7920822893500534720}
   - component: {fileID: 3801399852314700430}
+  - component: {fileID: 996343912709938000}
   m_Layer: 0
   m_Name: Hologram Camera
   m_TagString: MainCamera
@@ -28,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770150239514932}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114865344359803568
 MonoBehaviour:
@@ -77,7 +78,7 @@ MonoBehaviour:
     - isEnabled: 1
       renderType: 0
       quiltTexture: {fileID: 0}
-      renderSettings:
+      quiltSettings:
         quiltWidth: 0
         quiltHeight: 0
         columns: 0
@@ -130,41 +131,8 @@ MonoBehaviour:
       hwid: 
       index: 0
       state: 
-      windowCoords: 
-  lkgDisplayCopy:
-    id: -1
-    calibration:
-      rawJson: 
-      configVersion: 
-      serial: 
-      pitch: 0
-      slope: 0
-      center: 0
-      fringe: 0
-      viewCone: 0
-      invView: 0
-      verticalAngle: 0
-      dpi: 0
-      screenW: 0
-      screenH: 0
-      flipImageX: 0
-      flipImageY: 0
-      flipSubp: 0
-      cellPatternMode: 0
-      subpixelCells: []
-    defaultQuilt:
-      quiltWidth: 0
-      quiltHeight: 0
-      columns: 0
-      rows: 0
-      renderAspect: 0
-      tileCount: 0
-    hardwareInfo:
-      hardwareVersion: 
-      hwid: 
-      index: 0
-      state: 
-      windowCoords: 
+      windowCoordX: 0
+      windowCoordY: 0
   emulatedDeviceTemplate:
     calibration:
       rawJson: 
@@ -192,12 +160,6 @@ MonoBehaviour:
       rows: 0
       renderAspect: 0
       tileCount: 0
-  isUsingCustomLenticularRegion: 0
-  lenticularRegion:
-    left: 0
-    top: 0
-    right: 1536
-    bottom: 2048
   transformMode: 0
   nearClipFactor: 1.5
   farClipFactor: 4
@@ -335,9 +297,17 @@ Camera:
   m_projectionMatrixMode: 0
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -379,3 +349,47 @@ MonoBehaviour:
   quiltFilePath: 
   blockTitle: 
   blockDescription: 
+--- !u!114 &996343912709938000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770150239514932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
