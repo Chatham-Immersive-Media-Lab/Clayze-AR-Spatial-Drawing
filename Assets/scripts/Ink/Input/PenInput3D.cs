@@ -55,6 +55,11 @@ public class PenInput3D : MonoBehaviour
 
     public void HunterPenBehavior()
     {
+        if (Pen.current.firstBarrelButton.wasPressedThisFrame)
+        {
+            return;
+        }
+        
         _lastAddTime += Time.deltaTime;
         if (Pen.current == null)
         {
