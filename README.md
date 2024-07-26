@@ -1,7 +1,9 @@
 # IMM313-Proto-2-SE---AR-Spatial-Drawing
 
 Contributers: Evan Alexander, Syd Hass
+
 Course IMM313
+
 Summer Simester 2, 2024.
 
 ## Summary
@@ -9,6 +11,7 @@ This is a Unity repo exploring the combination of 2d drawing tablets with 3d dis
 
 ### Hardware Requirements
 Output: A Looking Glass Portrait.
+
 Input: A drawing tablet of some kind.
 
 ### How To
