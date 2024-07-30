@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - TranslateOrbUI
-  - ScaleOrbUI
   - RotateOrbUI
   - DrawOrbUI
+  - EraseOrbUI
   layers:
   - Default
   - TransparentFX

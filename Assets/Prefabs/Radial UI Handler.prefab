@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5200345964461580583}
   - component: {fileID: 4669154140231255239}
   m_Layer: 0
-  m_Name: Scale
-  m_TagString: ScaleOrbUI
+  m_Name: Erase
+  m_TagString: EraseOrbUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c276bda9e953db8438a8bc5e2e98b1b5, type: 2}
+  - {fileID: 2100000, guid: 9161e59c15613a442bf96ba5d6db0f70, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -167,7 +167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4f476719e8822b3449397f15b5fe3ff3, type: 2}
+  - {fileID: 2100000, guid: 4e9a21b0a6c78c445aac79b4b7c858c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -272,7 +272,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8eb7f17b2004a2c4898909f915a57306, type: 2}
+  - {fileID: 2100000, guid: 4131712a451b0ec4595c2e46abd06391, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -377,7 +377,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b4b6851ff03f9dc44ab2f4a238537320, type: 2}
+  - {fileID: 2100000, guid: 54573b17a12ce014690c66398c08bf0e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
