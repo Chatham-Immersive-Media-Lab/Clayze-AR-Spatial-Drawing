@@ -1,4 +1,6 @@
-# AR Creative Drawing (Final Prototype) Ryan Kmonk IMM313 Summer 2024 
+# AR Creative Drawing (Final Prototype) 
+
+Ryan Kmonk IMM313 Summer 2024 
 
 
 ## Project Description 
