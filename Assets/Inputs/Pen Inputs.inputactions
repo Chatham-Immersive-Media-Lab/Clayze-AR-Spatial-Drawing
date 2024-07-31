@@ -784,6 +784,78 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Color Black",
+                    "type": "Button",
+                    "id": "be1da674-7e8c-43ac-b7e8-da1d1dd0dd0c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Color Red",
+                    "type": "Button",
+                    "id": "b1591a19-79cb-4437-bb0c-10a2d7438282",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Color Blue",
+                    "type": "Button",
+                    "id": "7ea510b1-0247-40ae-8194-c80450787946",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Color Yellow",
+                    "type": "Button",
+                    "id": "eeb19639-2ad9-46ab-a2ad-1b9591b95a20",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Size Change 0.1",
+                    "type": "Button",
+                    "id": "b9cef391-17e9-48df-9441-6714aeefed1f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Size Change 0.2",
+                    "type": "Button",
+                    "id": "c0290f04-1e24-4b24-9c8a-37fa6002b7a9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Size Change 0.3",
+                    "type": "Button",
+                    "id": "6ef9a33b-d881-43f3-8149-2e00f7d25a3e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Size Change 0.4",
+                    "type": "Button",
+                    "id": "50f323c7-2181-4af8-859a-b6b2d3673d92",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -795,6 +867,94 @@
                     "processors": "",
                     "groups": "",
                     "action": "PenTap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7a49f09d-f6bb-4b9f-bb2a-028193f19601",
+                    "path": "<Keyboard>/1",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Color Black",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "000063b8-0c7c-4644-a9ce-9b3414a96d00",
+                    "path": "<Keyboard>/a",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Size Change 0.1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4256fa49-041d-4696-a5a2-13a7e243882c",
+                    "path": "<Keyboard>/2",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Color Red",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0f7ccf2-4729-4f8a-bf7a-6db3afad5231",
+                    "path": "<Keyboard>/3",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Color Blue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "127ddfbd-ac73-4bf5-a3cb-c5ceccbe657a",
+                    "path": "<Keyboard>/4",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Color Yellow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd66c203-7fe1-40fc-9ee6-584fd1e445f3",
+                    "path": "<Keyboard>/s",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Size Change 0.2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d4693149-52e9-4ebd-8f9e-ed980f87165a",
+                    "path": "<Keyboard>/d",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Size Change 0.3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d98743d4-298d-4979-b9bf-b398df915d8e",
+                    "path": "<Keyboard>/f",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Size Change 0.4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

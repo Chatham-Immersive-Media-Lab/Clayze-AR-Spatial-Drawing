@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,11 @@ public class PenErase : MonoBehaviour
 {
     [SerializeField] private GameObject eraseObject;
 
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        Destroy(this.gameObject);
+        if (other.gameObject.CompareTag("PenInput)"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

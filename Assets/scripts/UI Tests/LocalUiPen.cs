@@ -9,7 +9,7 @@ public class LocalUiPen : MonoBehaviour
 {
     
     /// <summary>
-    /// This scripts enables the 3 peice radial menu to translate, scale, and rotate the last object painted
+    /// This scripts enables the 3 piece radial menu to translate, erase, and rotate the last object painted
     /// within the 3d space. 
     /// </summary>
     [SerializeField] private Camera _camera;

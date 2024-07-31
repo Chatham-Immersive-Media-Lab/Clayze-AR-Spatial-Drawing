@@ -13,21 +13,21 @@ public class PointerUISelect : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //go take a look at the PenStateHandler for my arbitrary number method;
-        if (other.CompareTag("ScaleOrbUI"))
+        if (other.CompareTag("EraseOrbUI"))
         {
-            Debug.Log("scaleOrb Selected");
+            Debug.Log("EraseOrb Selected");
             _penStatehandler.stateInt = 3;
             _localUiPen.RadialDisable();
         }
         else if (other.CompareTag("TranslateOrbUI"))
         {
-            Debug.Log("translateOrb Selected");
+            Debug.Log("TranslateOrb Selected");
             _penStatehandler.stateInt = 2;
             _localUiPen.RadialDisable();
         }
         else if (other.CompareTag("RotateOrbUI"))
         {
-            Debug.Log("rotateOrb Selected");
+            Debug.Log("RotateOrb Selected");
             _penStatehandler.stateInt = 1;
             _localUiPen.RadialDisable();
         }
