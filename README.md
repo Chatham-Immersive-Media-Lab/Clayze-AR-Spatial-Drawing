@@ -1,6 +1,5 @@
-# Ryan Kmonk IMM313 Summer 2024
+# AR Creative Drawing (Final Prototype) Ryan Kmonk IMM313 Summer 2024 
 
-AR Creative Drawing (Final Prototype)
 
 ## Project Description 
 This project uses an XPPen Deco 01 drawing tablet and a Looking Glass to map a 3D space using a 2D drawing tablet and pen. It attempts to take advantage of the fact that pen drawing tablets are comfortable and familiar for virtual sketching. The user is intended to comfortably draw into a 3D space while taking a few simple creative liberties. 
@@ -8,7 +7,7 @@ This project uses an XPPen Deco 01 drawing tablet and a Looking Glass to map a 3
 ### Hardware Requirements
 Output: A Looking Glass Portrait.
 
-Input: A drawing tablet of some kind (XPPen Deco 01 for this example).
+Input: A drawing tablet (XPPen Deco 01 for this example).
 
 ### Set Up 
 - Open this project in Unity editor version 2022.3.34f1 or newer.
@@ -21,4 +20,5 @@ Use the tip of the drawing tablet to control the cursor on the Looking Glass. Th
 
 ## Attributions
 Forked from: https://github.com/Chathander/IMM313-Proto-2-SE---AR-Spatial-Drawing
+
 Unity Technologies
