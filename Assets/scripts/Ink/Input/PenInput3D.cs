@@ -9,7 +9,7 @@ public class PenInput3D : MonoBehaviour
 {
     private Stroke3 _currentStroke;
     private byte _id;
-
+    public float drawDepth;
     [Header("Pen Style Configuration")]
     public Color PenColor = Color.black;
     public float PenThickness = 0.05f;
@@ -137,7 +137,7 @@ public class PenInput3D : MonoBehaviour
     {
         var screen = new Vector3(Pen.current.position.x.value, Pen.current.position.y.value,10);
         var world = Camera.main.ScreenToWorldPoint(screen);
-        return new Vector3(world.x,world.y, GetCurrentPressure()/255f*10f);
+        return new Vector3(world.x,world.y, drawDepth);
         // return Camera.main.ScreenToWorldPoint(new Vector3(Pen.current.position.x.value, Pen.current.position.y.value, 5));
     }
     
