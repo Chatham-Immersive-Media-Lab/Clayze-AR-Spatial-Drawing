@@ -1,6 +1,4 @@
-AR Creative Drawing (Final Prototype)
-
-Ryan Kmonk IMM313 Summer 2024
+## Looking Glass Drawing
 
 Project Description
 
@@ -12,7 +10,7 @@ Output: A Looking Glass Portrait.
 
 Input: A drawing tablet (XPPen Deco 01 for this example).
 
-Set Up
+## Set Up
 
 Open this project in Unity editor version 2022.3.34f1 or newer.
 Navigate to scenes

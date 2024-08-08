@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PointerUISelect : MonoBehaviour
 {
@@ -16,26 +15,26 @@ public class PointerUISelect : MonoBehaviour
         if (other.CompareTag("EraseOrbUI"))
         {
             Debug.Log("EraseOrb Selected");
-            _penStatehandler.stateInt = 3;
+            _penStatehandler.state = PenInputState.Scale;
             _localUiPen.RadialDisable();
         }
         else if (other.CompareTag("TranslateOrbUI"))
         {
             Debug.Log("TranslateOrb Selected");
-            _penStatehandler.stateInt = 2;
+            _penStatehandler.state = PenInputState.Translating;
             _localUiPen.RadialDisable();
         }
         else if (other.CompareTag("RotateOrbUI"))
         {
             Debug.Log("RotateOrb Selected");
-            _penStatehandler.stateInt = 1;
+            _penStatehandler.state = PenInputState.Rotating;
             _localUiPen.RadialDisable();
         }
         else if (other.CompareTag("DrawOrbUI"))
         {
             //what a nightmare of a choice here! this goes against the whole deal here...
             //there is no UI showing this, god heck!
-            _penStatehandler.stateInt = 0;
+            _penStatehandler.state = PenInputState.Drawing;
             _localUiPen.RadialDisable();
         }
     }

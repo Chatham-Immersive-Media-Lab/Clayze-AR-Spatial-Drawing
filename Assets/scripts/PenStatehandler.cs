@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PenStatehandler : MonoBehaviour
 {
@@ -20,7 +19,7 @@ public class PenStatehandler : MonoBehaviour
     private Vector3 penStartPosition;
     [SerializeField] private Vector3 totalPenTravel;
     [Space]
-    public int stateInt = 0;
+    public PenInputState state = 0;
     [Space] 
     [SerializeField] private PenInput3D _penInput3D;
     public GameObject drawingObjectParent;
@@ -38,8 +37,24 @@ public class PenStatehandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChosenPenState();
-
+        if (state == PenInputState.Drawing)
+        {
+            _penInput3D.HunterPenBehavior();
+        }
+        else if (state == PenInputState.Rotating)
+        {
+            RotationTick();
+        }
+        else if (state == PenInputState.Scale)
+        {
+            TranslateLineRenderTick();
+        }
+        else if (state == PenInputState.Translating)
+        {
+            ScaleStateTick();
+        }
+        
+        
         if (Pen.current.tip.wasReleasedThisFrame)
         {
             GetChildObjects();
@@ -74,28 +89,8 @@ public class PenStatehandler : MonoBehaviour
 
         _lastDrawnObject = drawnObjectList.Last();
     }
-    public void ChosenPenState()
-    {
-        //each behavior needs to get the current newly instantiated object in the scene... how can I do that.
-        if (stateInt == 0)
-        { 
-            _penInput3D.HunterPenBehavior();   
-        }
-        else if (stateInt == 1)
-        {
-            RotationState();
-        }
-        else if (stateInt == 2)
-        {
-            TranslateLineRender();
-        }
-        else if (stateInt == 3)
-        {
-            ScaleState();
-        }
-    }
-    
-    private void RotationState()
+
+    private void RotationTick()
     {
         if (Pen.current.tip.IsPressed())
         {
@@ -109,7 +104,7 @@ public class PenStatehandler : MonoBehaviour
         }
     }
 
-    private void TranslateLineRender()
+    private void TranslateLineRenderTick()
     {
         if (Pen.current.tip.IsPressed())
         {
@@ -142,7 +137,7 @@ public class PenStatehandler : MonoBehaviour
         }
     }
 
-    private void ScaleState()
+    private void ScaleStateTick()
     {
         
     }
