@@ -39,7 +39,7 @@ public class PenStatehandler : MonoBehaviour
     {
         if (state == PenInputState.Drawing)
         {
-            _penInput3D.HunterPenBehavior();
+           // _penInput3D.HunterPenBehavior();
         }
         else if (state == PenInputState.Rotating)
         {
@@ -108,8 +108,8 @@ public class PenStatehandler : MonoBehaviour
     {
         if (Pen.current.tip.IsPressed())
         {
-            DistanceAdd();
-            AdditionToLinePoints();
+           // DistanceAdd();
+         //   AdditionToLinePoints();
         }
     }
 

@@ -1,5 +1,29 @@
 {
   "dependencies": {
+    "com.endel.nativewebsocket": {
+      "version": "1.1.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.hdyar.clayze": {
+      "version": "file:clayze",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.endel.nativewebsocket": "1.1.4",
+        "com.mackysoft.serializereference-extensions": "1.3.1",
+        "com.unity.mathematics": "1.2.6"
+      }
+    },
+    "com.mackysoft.serializereference-extensions": {
+      "version": "1.3.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.unity.burst": {
       "version": "1.8.15",
       "depth": 1,
