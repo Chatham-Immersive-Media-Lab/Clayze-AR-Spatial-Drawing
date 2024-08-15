@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/UI and Painting.unity
-    guid: 97551d503482b794985bdc980e8c1028
+    path: Assets/Scenes/Hunter-Testing-Playgrround.unity
+    guid: f56981d110b56eb41968e5798800b398
   m_configObjects: {}

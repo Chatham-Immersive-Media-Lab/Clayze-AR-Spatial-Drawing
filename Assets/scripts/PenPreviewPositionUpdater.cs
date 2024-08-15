@@ -1,5 +1,7 @@
 ﻿using System;
+using LookingGlass;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public class PenPreviewPositionUpdater : MonoBehaviour
@@ -18,4 +20,6 @@ public class PenPreviewPositionUpdater : MonoBehaviour
 	{
 		transform.position = _PenInput3D.PenToWorld();
 	}
+
+	
 }

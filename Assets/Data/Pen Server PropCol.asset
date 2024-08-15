@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd79a95b4aaf44139e10c093bb610114, type: 3}
   m_Name: Pen Server PropCol
   m_EditorClassIdentifier: 
-  ConnectionStatus: 0
+  ConnectionStatus: 3
   _socketSettings:
     connectionURL: wss://clayzeserver.hdyar.com/a
-    recentConnectionURLs: []
+    recentConnectionURLs:
+    - wss://clayzeserver.hdyar.com/a
+    - ws://localhost:5165/test
   _values:
   - {fileID: 11400000, guid: 51eae6a1bd3c2cb4f9b48ea635489ba5, type: 2}
+  - {fileID: 11400000, guid: 80fe6319b92ffdf45b4c370ce7daea85, type: 2}
